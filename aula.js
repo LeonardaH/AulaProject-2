@@ -4,7 +4,7 @@ $(document).ready(function () {
         $(".drop-down").toggleClass('expand');
         $(".arrow").toggleClass('rotate-180');
     });
-    $(".menu").click(function () {
+    $(".hamburger").click(function () {
         $(".nav-list").toggleClass('show-menu');
         $(".home").toggleClass('blue-home');
     });

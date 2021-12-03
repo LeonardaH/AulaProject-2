@@ -213,6 +213,7 @@ header{
                 display: block;
             }   
         }
+        //social media icons
         .social-media{
             display: flex;
             @media only screen and (max-width: 768px){
@@ -235,7 +236,8 @@ header{
                 background-image: url(images/instagram.svg);
             }
         }
-        .menu{
+        //hamburger - mobile version
+        .hamburger{
             display: none;
             @media only screen and (max-width: 768px){
                 &:hover{
@@ -249,8 +251,8 @@ header{
         }
     }    
 }
-// header-menu
-  
+// header - mobile version
+
 .expand{
     @media only screen and (max-width: 768px){
         height: 160px!important;
@@ -627,7 +629,7 @@ h2{
                         font-size: 12px;
                     }
                     span{
-                        margin: 0 0 2px 10px;
+                        margin: 0 0 1px 10px;
                         border: solid #fff;
                         border-top-width: medium;
                         border-right-width: medium;
