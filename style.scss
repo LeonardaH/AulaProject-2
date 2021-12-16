@@ -131,7 +131,6 @@ header{
                         display: flex;
                         align-items: center;
                         @media only screen and (max-width: 768px){
-                            font-size: 16px;
                             padding-left: 30px;
                             &.selected{
                                 border: none;
