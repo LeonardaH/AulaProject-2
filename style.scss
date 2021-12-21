@@ -117,9 +117,6 @@ header{
                     @media only screen and (max-width: 768px){
                         height: auto;
                         padding: 10px 0;
-                        &:nth-child(1){
-                            padding-top: 0;
-                        }
                     }
                     a{
                         color: white;
@@ -324,21 +321,20 @@ header{
 .content{
     height: 100%;
     width: 100%;
-    overflow: hidden;
     position: relative;
     background-color: #f9f9f9;
     transition: 0.5s;
-    padding-bottom: 0px;
-    .categories-container{
+    .content-holder{
+        width: 100%;
+        max-width: 1400px;
         overflow: hidden;
-        padding: 0 30px 30px 30px;
     }
     .main-content{
         width: 100%;
         height: 600px;
         background-color: #f7ba09;
-        overflow: hidden;
         position: relative;
+        padding: 0!important;
         @media only screen and (max-width: 1280px){
             padding-bottom: 40%;
         }
@@ -465,261 +461,247 @@ h2{
 
 //categories - home page
 
-.categories{
+.section-holder{
     max-width: 1400px;
     width: 100%;
+    overflow: hidden;
     margin: auto;
-    .categories-container{
-        display: grid;
-        padding-top: 60px;
+    padding: 0 30px;
+    .category-grid{
         width: 100%;
-        padding-bottom: 60px;
-        @media only screen and (max-width: 900px){
-            grid-template-columns: auto;   
-            grid-gap: 10px;
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 20px;
+        @media only screen and (max-width: 1100px){
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
         }
-        .category-grid{
+        @media only screen and (max-width: 768px){
+            grid-template-columns: 1fr;
+            grid-gap: 40px;
+        }
+        .category-content{
             width: 100%;
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            grid-template-rows: 1f 1fr;
-            grid-gap: 30px;
-            @media only screen and (max-width: 1100px){
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 40px;
+            h2{
+                font-size: 18px;
+                font-weight: 700;
+                padding: 40px 0 10px 0;
+                color: #000;
+                @media only screen and (max-width: 480px){
+                    font-size: 16px;
+                    padding-top: 14px;
+                }
             }
-            @media only screen and (max-width: 768px){
-                grid-template-columns: 1fr;
-                grid-gap: 40px;
+            p{
+                color: #000;
+                @media only screen and (max-width: 480px){
+                    font-size: 14px;
+                }
             }
-            .category-content{
+            .image{
                 width: 100%;
-                a{
-                    display: grid;
-                }
-                h2{
-                    font-size: 18px;
-                    font-weight: 700;
-                    padding: 40px 0 10px 0;
-                    color: #000;
-                    @media only screen and (max-width: 480px){
-                        font-size: 16px;
-                        padding-top: 14px;
-                    }
-                }
-                p{
-                    color: #000;
-                    @media only screen and (max-width: 480px){
-                        font-size: 14px;
-                    }
-                }
-                .image{
-                    width: 100%;
-                    padding-bottom: 55%;
-                    transition: 0.2s;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: 100%;
-                    &:hover{
-                        background-size: 110%;
-                    }
-                }
-                .learning-help{
-                    background-image: url(images/pomoc-u-ucenju.svg);
-                }
-                .tutoring{
-                    background-image: url(images/instrukcije.svg);
-                }
-                .consulting{
-                    background-image: url(images/savjetovanje-roditelja.svg);
-                }
-                .education{
-                    background-image: url(images/edukacija-za-pomocnike.svg);
-                }
-                //CTA button - category-content
-                .learn-more{
-                    color: #3aa0df;
-                    font-size: 18px;
-                    padding-top: 10px;
-                    span{
-                        margin: 0 0 1px 5px;
-                        border: solid #555;
-                        border-width: 0 2px 2px 0;
-                        border-right-width: medium;
-                        border-bottom-width: medium;
-                        display: inline-block;
-                        padding: 2px;
-                        transform: rotate(-45deg);
-                        opacity: .5;
-                        &:hover{
-                            opacity: 1;
-                        }
-                    }
-                    &:hover{
-                        color: #316b90;
-                    }
-                    @media only screen and (max-width: 480px){
-                        font-size: 14px;
-                    }
-                }
-            }
-        }
-        // section online-learning and learning methods
-        .online-learning, .learning-methods{
-            width: 100%;
-            height: 600px;
-            background-image: url(images/online-ucenje.svg);
-            background-size: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            margin-top: 80px;
-            @media only screen and (max-width: 768px){
-                height: 0;
-                float: left;
-                background-position: bottom right -30px;
-                background-size: auto 100%;
-                padding-bottom: 120%;
-                margin-bottom: 50px;
-                margin-top: 50px;
-            }
-            .text-container{
-                width: 50%;
-                top: 50%;
-                transform: translateY(-50%);
-                position: absolute;
-                padding-left: 120px;
-                @media only screen and (max-width: 768px){
-                    padding: 30px;
-                    transform: none;
-                    top: 0;
-                    width: 80%;
-                }
-                h2{
-                    font-size: 32px;
-                    @media only screen and (max-width: 480px){
-                        font-size: 22px;
-                    }
-                }
-                p{
-                    font-size: 18px;
-                    padding-top: 15px;
-                    color: white;
-                    @media only screen and (max-width: 480px){
-                        font-size: 15px;
-                    }
-                }
-                a{
-                    background-color: rgba(0, 0, 0, 0.4);
-                    padding: 10px 30px;
-                    color: white;
-                    margin-top: 25px;
-                    display: inline-block;
-                    transition: 0.2s;
-                    font-size: 18px;
-                    @media only screen and (max-width: 768px){
-                        padding: 8px 12px;
-                        font-size: 16px;
-                        margin-top: 15px;
-                        background-color: rgba(0, 0, 0, 0.5);
-                    }
-                    @media only screen and (max-width: 320px){
-                        padding: 8px 8px;
-                        font-size: 12px;
-                    }
-                    span{
-                        margin: 0 0 1px 10px;
-                        border: solid #fff;
-                        border-top-width: medium;
-                        border-right-width: medium;
-                        border-bottom-width: medium;
-                        border-left-width: medium;
-                        border-width: 0 2px 2px 0;
-                        display: inline-block;
-                        padding: 3px;
-                        transform: rotate(-45deg);
-                        opacity: .5;
-                        @media only screen and (max-width: 320px){ 
-                            margin-bottom: 1px;
-                            padding: 2px;
-                        }   
-                    }
-                    &:hover{
-                        background: rgba($color: #000000, $alpha: 0.5);
-                    }
-                }
-            }
-        }
-        .online-learning{
-            @media only screen and (max-width: 450px){
-                height: 0;
-                float: left;
-                background-position: bottom right -55px;
-                background-size: auto 100%;
-                padding-bottom: 150%;
-                margin-bottom: 50px;
-                margin-top: 50px;
-                left: -30px;
-                width: calc(100% + 60px);
-            }
-            @media only screen and (max-width: 320px){
-                padding-bottom: 110%;
-            }
-        }
-        .learning-methods{
-            width: 100%;
-            height: 600px;
-            background-repeat: no-repeat;
-            background-image: url(images/gm-6.png);
-            background-size: 50%;
-            background-position: left center;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            @media only screen and (max-width: 1100px){
-                height: 400px;
-                padding-bottom: 0;
-            }
-            @media only screen and (max-width: 900px){
-                height: 300px;
-                padding-bottom: 0;
-            }
-            @media only screen and (max-width: 768px){
-                height: 0;
-                padding-bottom: 100%;
-                background-position: bottom;
+                padding-bottom: 55%;
+                transition: 0.2s;
+                background-position: center;
+                background-repeat: no-repeat;
                 background-size: 100%;
-                margin-top: 0;
-            }
-            @media only screen and (max-width: 480px){
-                padding-bottom: 120%;
-            }
-            @media only screen and (max-width: 320px){
-                padding-bottom: 135%;
-            }
-            .text-container{
-                width: 50%;
-                @media only screen and (max-width: 768px){
-                    width: 100%;
-                    top: 0px;
-                    padding-top: 0;
-                    padding-left: 0;
-                    transform: none;
+                &:hover{
+                    background-size: 110%;
                 }
-                h2, p{
-                    color: #000;
-                }
-                a{
-                    background-color: #316b90;
+            }
+            .learning-help{
+                background-image: url(images/pomoc-u-ucenju.svg);
+            }
+            .tutoring{
+                background-image: url(images/instrukcije.svg);
+            }
+            .consulting{
+                background-image: url(images/savjetovanje-roditelja.svg);
+            }
+            .education{
+                background-image: url(images/edukacija-za-pomocnike.svg);
+            }
+            //CTA button - category-content
+            .learn-more{
+                color: #3aa0df;
+                font-size: 18px;
+                padding-top: 10px;
+                span{
+                    margin: 0 0 1px 5px;
+                    border: solid #555;
+                    border-width: 0 2px 2px 0;
+                    border-right-width: medium;
+                    border-bottom-width: medium;
+                    display: inline-block;
+                    padding: 2px;
+                    transform: rotate(-45deg);
+                    opacity: .5;
                     &:hover{
-                        background: #295978;
+                        opacity: 1;
                     }
+                }
+                &:hover{
+                    color: #316b90;
+                }
+                @media only screen and (max-width: 480px){
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    // section online-learning and learning methods
+    .online-learning, .learning-methods{
+        width: 100%;
+        height: 600px;
+        background-image: url(images/online-ucenje.svg);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        margin-top: 60px;
+        @media only screen and (max-width: 768px){
+            height: 0;
+            float: left;
+            background-position: bottom right -30px;
+            background-size: auto 100%;
+            padding-bottom: 120%;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        .text-container{
+            width: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            padding-left: 120px;
+            @media only screen and (max-width: 768px){
+                padding: 30px;
+                transform: none;
+                top: 0;
+                width: 80%;
+            }
+            h2{
+                font-size: 32px;
+                @media only screen and (max-width: 480px){
+                    font-size: 22px;
+                }
+            }
+            p{
+                font-size: 18px;
+                padding-top: 15px;
+                color: white;
+                @media only screen and (max-width: 480px){
+                    font-size: 15px;
+                }
+            }
+            a{
+                background-color: rgba(0, 0, 0, 0.4);
+                padding: 10px 30px;
+                color: white;
+                margin-top: 25px;
+                display: inline-block;
+                transition: 0.2s;
+                font-size: 18px;
+                @media only screen and (max-width: 768px){
+                    padding: 8px 12px;
+                    font-size: 16px;
+                    margin-top: 15px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+                @media only screen and (max-width: 320px){
+                    padding: 8px 8px;
+                    font-size: 12px;
+                }
+                span{
+                    margin: 0 0 1px 10px;
+                    border: solid #fff;
+                    border-width: 0 2px 2px 0;
+                    display: inline-block;
+                    padding: 3px;
+                    transform: rotate(-45deg);
+                    opacity: .5;
+                    @media only screen and (max-width: 320px){ 
+                        margin-bottom: 1px;
+                        padding: 2px;
+                    }   
+                }
+                &:hover{
+                    background: rgba($color: #000000, $alpha: 0.5);
+                }    
+            }
+        }
+    }
+    .online-learning{
+        @media only screen and (max-width: 450px){
+            height: 0;
+            float: left;
+            background-position: bottom right -55px;
+            background-size: auto 100%;
+            padding-bottom: 150%;
+            margin-bottom: 50px;
+            margin-top: 50px;
+            left: -30px;
+            width: calc(100% + 60px);
+        }
+        @media only screen and (max-width: 320px){
+            padding-bottom: 110%;
+        }
+    }
+    .learning-methods{
+        width: 100%;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-image: url(images/gm-6.png);
+        background-size: 50%;
+        background-position: left center;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        @media only screen and (max-width: 1100px){
+            height: 400px;
+            padding-bottom: 0;
+        }
+        @media only screen and (max-width: 900px){
+            height: 300px;
+            padding-bottom: 0;
+        }
+        @media only screen and (max-width: 768px){
+            height: 0;
+            padding-bottom: 100%;
+            background-position: bottom;
+            background-size: 100%;
+            margin-top: 0;
+        }
+        @media only screen and (max-width: 480px){
+            padding-bottom: 120%;
+        }
+        @media only screen and (max-width: 320px){
+            padding-bottom: 135%;
+        }
+        .text-container{
+            width: 50%;
+            @media only screen and (max-width: 768px){
+                width: 100%;
+                top: 0px;
+                padding-top: 0;
+                padding-left: 0;
+                 transform: none;
+            }
+            h2, p{
+                color: #000;
+            }
+            a{
+                background-color: #316b90;
+                &:hover{
+                    background: #295978;
                 }
             }
         }
     }
 }
+
 
 // resize main picture
 
@@ -866,81 +848,92 @@ footer{
 
 // pages  --- pomoc_u_učenju | instrukcije | savjetovanje_roditelja | specijalne_metode_rada | edukacija_za_pomocnike
 
-.category{
-    margin-top: 44px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 40px;
-    @media only screen and (max-width: 900px){
-        margin: 0;
-        padding: 0 30px 30px 30px;
-    }
+.categories{
+    padding-top: 100px;
+    padding-bottom: 60px;
     @media only screen and (max-width: 766px){
-        padding-bottom: 20px!important;
+        padding-top: 60px;
+        padding-bottom: 30px;
     }
-    .category-text-container{
+    .category-container{
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 40px;
+        padding:0 30px;
         @media only screen and (max-width: 900px){
-            padding-top: 30px;
-            padding-bottom: 0;
+            margin: 0;
         }
-        h2{
-            color: #3596d3;
-            font-size: 36px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            text-align: center;
-            @media only screen and (max-width: 480px){
-                font-size: 26px;
-            }
+        @media only screen and (max-width: 766px){
+            padding-bottom: 20px!important;
+            grid-template-columns: 1fr;
         }
-        p{
-            padding: 20px 0;
-            line-height: 1.5;
-            @media only screen and (max-width: 480px){
-                font-size: 15px;
-            }
-        }
-        .price{
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            padding-top: 20px;
-            line-height: 1.5;
-            span{
-                font-weight: bold;
-            }
-        }
-    }
-    .picture-container{
-        @media only screen and (max-width: 900px){
-            grid-row-start: 1;
-            grid-row-end: 2;  
-        }
-       .tutoring, .learning-help, .consulting, .category-learning-methods, .education{
-            background-color: #7CCCFF;
-            height: 0px;
-            padding-bottom: 65%;
-            margin-top: 63px;
-            background-image: url(images/instrukcije.svg);
-            background-repeat: no-repeat;
-            background-size: 100%;
-            background-position: bottom center;
+        .category-text-container{
             @media only screen and (max-width: 900px){
-                margin: 0 -30px 0 -30px; 
+                padding-top: 30px;
+                padding-bottom: 0;
+            }
+            h2{
+                color: #3596d3;
+                font-size: 36px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                text-align: center;
+                @media only screen and (max-width: 480px){
+                    font-size: 26px;
+                }
+            }
+            p{
+                padding: 20px 0;
+                line-height: 1.5;
+                @media only screen and (max-width: 480px){
+                    font-size: 15px;
+                }
+            }
+            .price{
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                padding-top: 20px;
+                line-height: 1.5;
+                span{
+                    font-weight: bold;
+                }
             }
         }
-        .learning-help{
-            background-image: url(images/pomoc-u-ucenju.svg);
-        }
-        .consulting{
-            background-image: url(images/savjetovanje-roditelja-big.svg)
-        }
-        .category-learning-methods{
-            background-image: url(images/gm-6.png);
-            background-size: auto 90%;
-        }
-        .education{
-            background-image: url(images/edukacija-za-pomocnike-big.svg);
-        }
-    }   
+        .picture-container{
+            @media only screen and (max-width: 900px){
+                grid-row-start: 1;
+                grid-row-end: 2;  
+            }
+        .tutoring, .learning-help, .consulting, .category-learning-methods, .education{
+                background-color: #7CCCFF;
+                height: 0px;
+                padding-bottom: 65%;
+                margin-top: 63px;
+                background-image: url(images/instrukcije.svg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: bottom center;
+                @media only screen and (max-width: 900px){
+                    margin: 0 -30px 0 -30px; 
+                }
+            }
+            .learning-help{
+                background-image: url(images/pomoc-u-ucenju.svg);
+            }
+            .consulting{
+                background-image: url(images/savjetovanje-roditelja-big.svg)
+            }
+            .category-learning-methods{
+                background-image: url(images/gm-6.png);
+                background-size: auto 90%;
+            }
+            .education{
+                background-image: url(images/edukacija-za-pomocnike-big.svg);
+            }
+        }   
+    }
 }
 
 //contact-page
@@ -979,14 +972,14 @@ footer{
         .contact-info{
             box-shadow: 0 3px 3px rgba(0,0,0,0.2);
             width: 340px;
-            height: 350px;
+            height: auto;
             margin: auto;
-            margin-top: -20px;
+            padding-top: -20px;
+            padding-bottom: 30px;
             @media only screen and (max-width: 480px){
                 box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
                 width: 100%;
-                max-width: 340px;
-                height: 350px;
+                max-width: 385px;
                 margin: auto;
                 margin-top: -20px;
             }
@@ -1132,7 +1125,7 @@ footer{
                 @media only screen and (max-width: 480px){
                     background-size: 80%;
                     background-position: center bottom;
-                    margin-top: -20px!important;
+                    margin-top: -50px!important;
                 } 
             }
         }

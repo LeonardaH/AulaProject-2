@@ -160,9 +160,6 @@ header nav .nav-container .nav-list li {
     height: auto;
     padding: 10px 0;
   }
-  header nav .nav-container .nav-list li:nth-child(1) {
-    padding-top: 0;
-  }
 }
 
 header nav .nav-container .nav-list li a {
@@ -182,7 +179,6 @@ header nav .nav-container .nav-list li a {
 
 @media only screen and (max-width: 768px) {
   header nav .nav-container .nav-list li a {
-    font-size: 16px;
     padding-left: 30px;
   }
   header nav .nav-container .nav-list li a.selected {
@@ -394,25 +390,24 @@ header.blue nav .logo .logo-image, header.blue-home nav .logo .logo-image {
 .content {
   height: 100%;
   width: 100%;
-  overflow: hidden;
   position: relative;
   background-color: #f9f9f9;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  padding-bottom: 0px;
 }
 
-.content .categories-container {
+.content .content-holder {
+  width: 100%;
+  max-width: 1400px;
   overflow: hidden;
-  padding: 0 30px 30px 30px;
 }
 
 .content .main-content {
   width: 100%;
   height: 600px;
   background-color: #f7ba09;
-  overflow: hidden;
   position: relative;
+  padding: 0 !important;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -598,41 +593,26 @@ h2 {
   color: white;
 }
 
-.categories {
+.section-holder {
   max-width: 1400px;
   width: 100%;
+  overflow: hidden;
   margin: auto;
+  padding: 0 30px;
 }
 
-.categories .categories-container {
-  display: -ms-grid;
-  display: grid;
-  padding-top: 60px;
+.section-holder .category-grid {
   width: 100%;
-  padding-bottom: 60px;
-}
-
-@media only screen and (max-width: 900px) {
-  .categories .categories-container {
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
-    grid-gap: 10px;
-  }
-}
-
-.categories .categories-container .category-grid {
-  width: 100%;
+  margin-top: 60px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: 1f 1fr;
-      grid-template-rows: 1f 1fr;
-  grid-gap: 30px;
+  grid-gap: 20px;
 }
 
 @media only screen and (max-width: 1100px) {
-  .categories .categories-container .category-grid {
+  .section-holder .category-grid {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
@@ -640,23 +620,18 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
-  .categories .categories-container .category-grid {
+  .section-holder .category-grid {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 40px;
   }
 }
 
-.categories .categories-container .category-grid .category-content {
+.section-holder .category-grid .category-content {
   width: 100%;
 }
 
-.categories .categories-container .category-grid .category-content a {
-  display: -ms-grid;
-  display: grid;
-}
-
-.categories .categories-container .category-grid .category-content h2 {
+.section-holder .category-grid .category-content h2 {
   font-size: 18px;
   font-weight: 700;
   padding: 40px 0 10px 0;
@@ -664,23 +639,23 @@ h2 {
 }
 
 @media only screen and (max-width: 480px) {
-  .categories .categories-container .category-grid .category-content h2 {
+  .section-holder .category-grid .category-content h2 {
     font-size: 16px;
     padding-top: 14px;
   }
 }
 
-.categories .categories-container .category-grid .category-content p {
+.section-holder .category-grid .category-content p {
   color: #000;
 }
 
 @media only screen and (max-width: 480px) {
-  .categories .categories-container .category-grid .category-content p {
+  .section-holder .category-grid .category-content p {
     font-size: 14px;
   }
 }
 
-.categories .categories-container .category-grid .category-content .image {
+.section-holder .category-grid .category-content .image {
   width: 100%;
   padding-bottom: 55%;
   -webkit-transition: 0.2s;
@@ -690,33 +665,33 @@ h2 {
   background-size: 100%;
 }
 
-.categories .categories-container .category-grid .category-content .image:hover {
+.section-holder .category-grid .category-content .image:hover {
   background-size: 110%;
 }
 
-.categories .categories-container .category-grid .category-content .learning-help {
+.section-holder .category-grid .category-content .learning-help {
   background-image: url(images/pomoc-u-ucenju.svg);
 }
 
-.categories .categories-container .category-grid .category-content .tutoring {
+.section-holder .category-grid .category-content .tutoring {
   background-image: url(images/instrukcije.svg);
 }
 
-.categories .categories-container .category-grid .category-content .consulting {
+.section-holder .category-grid .category-content .consulting {
   background-image: url(images/savjetovanje-roditelja.svg);
 }
 
-.categories .categories-container .category-grid .category-content .education {
+.section-holder .category-grid .category-content .education {
   background-image: url(images/edukacija-za-pomocnike.svg);
 }
 
-.categories .categories-container .category-grid .category-content .learn-more {
+.section-holder .category-grid .category-content .learn-more {
   color: #3aa0df;
   font-size: 18px;
   padding-top: 10px;
 }
 
-.categories .categories-container .category-grid .category-content .learn-more span {
+.section-holder .category-grid .category-content .learn-more span {
   margin: 0 0 1px 5px;
   border: solid #555;
   border-width: 0 2px 2px 0;
@@ -729,21 +704,21 @@ h2 {
   opacity: .5;
 }
 
-.categories .categories-container .category-grid .category-content .learn-more span:hover {
+.section-holder .category-grid .category-content .learn-more span:hover {
   opacity: 1;
 }
 
-.categories .categories-container .category-grid .category-content .learn-more:hover {
+.section-holder .category-grid .category-content .learn-more:hover {
   color: #316b90;
 }
 
 @media only screen and (max-width: 480px) {
-  .categories .categories-container .category-grid .category-content .learn-more {
+  .section-holder .category-grid .category-content .learn-more {
     font-size: 14px;
   }
 }
 
-.categories .categories-container .online-learning, .categories .categories-container .learning-methods {
+.section-holder .online-learning, .section-holder .learning-methods {
   width: 100%;
   height: 600px;
   background-image: url(images/online-ucenje.svg);
@@ -751,11 +726,11 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 @media only screen and (max-width: 768px) {
-  .categories .categories-container .online-learning, .categories .categories-container .learning-methods {
+  .section-holder .online-learning, .section-holder .learning-methods {
     height: 0;
     float: left;
     background-position: bottom right -30px;
@@ -766,7 +741,7 @@ h2 {
   }
 }
 
-.categories .categories-container .online-learning .text-container, .categories .categories-container .learning-methods .text-container {
+.section-holder .online-learning .text-container, .section-holder .learning-methods .text-container {
   width: 50%;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -776,7 +751,7 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
-  .categories .categories-container .online-learning .text-container, .categories .categories-container .learning-methods .text-container {
+  .section-holder .online-learning .text-container, .section-holder .learning-methods .text-container {
     padding: 30px;
     -webkit-transform: none;
             transform: none;
@@ -785,29 +760,29 @@ h2 {
   }
 }
 
-.categories .categories-container .online-learning .text-container h2, .categories .categories-container .learning-methods .text-container h2 {
+.section-holder .online-learning .text-container h2, .section-holder .learning-methods .text-container h2 {
   font-size: 32px;
 }
 
 @media only screen and (max-width: 480px) {
-  .categories .categories-container .online-learning .text-container h2, .categories .categories-container .learning-methods .text-container h2 {
+  .section-holder .online-learning .text-container h2, .section-holder .learning-methods .text-container h2 {
     font-size: 22px;
   }
 }
 
-.categories .categories-container .online-learning .text-container p, .categories .categories-container .learning-methods .text-container p {
+.section-holder .online-learning .text-container p, .section-holder .learning-methods .text-container p {
   font-size: 18px;
   padding-top: 15px;
   color: white;
 }
 
 @media only screen and (max-width: 480px) {
-  .categories .categories-container .online-learning .text-container p, .categories .categories-container .learning-methods .text-container p {
+  .section-holder .online-learning .text-container p, .section-holder .learning-methods .text-container p {
     font-size: 15px;
   }
 }
 
-.categories .categories-container .online-learning .text-container a, .categories .categories-container .learning-methods .text-container a {
+.section-holder .online-learning .text-container a, .section-holder .learning-methods .text-container a {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 10px 30px;
   color: white;
@@ -819,7 +794,7 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
-  .categories .categories-container .online-learning .text-container a, .categories .categories-container .learning-methods .text-container a {
+  .section-holder .online-learning .text-container a, .section-holder .learning-methods .text-container a {
     padding: 8px 12px;
     font-size: 16px;
     margin-top: 15px;
@@ -828,19 +803,15 @@ h2 {
 }
 
 @media only screen and (max-width: 320px) {
-  .categories .categories-container .online-learning .text-container a, .categories .categories-container .learning-methods .text-container a {
+  .section-holder .online-learning .text-container a, .section-holder .learning-methods .text-container a {
     padding: 8px 8px;
     font-size: 12px;
   }
 }
 
-.categories .categories-container .online-learning .text-container a span, .categories .categories-container .learning-methods .text-container a span {
+.section-holder .online-learning .text-container a span, .section-holder .learning-methods .text-container a span {
   margin: 0 0 1px 10px;
   border: solid #fff;
-  border-top-width: medium;
-  border-right-width: medium;
-  border-bottom-width: medium;
-  border-left-width: medium;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
@@ -850,18 +821,18 @@ h2 {
 }
 
 @media only screen and (max-width: 320px) {
-  .categories .categories-container .online-learning .text-container a span, .categories .categories-container .learning-methods .text-container a span {
+  .section-holder .online-learning .text-container a span, .section-holder .learning-methods .text-container a span {
     margin-bottom: 1px;
     padding: 2px;
   }
 }
 
-.categories .categories-container .online-learning .text-container a:hover, .categories .categories-container .learning-methods .text-container a:hover {
+.section-holder .online-learning .text-container a:hover, .section-holder .learning-methods .text-container a:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
 @media only screen and (max-width: 450px) {
-  .categories .categories-container .online-learning {
+  .section-holder .online-learning {
     height: 0;
     float: left;
     background-position: bottom right -55px;
@@ -875,19 +846,19 @@ h2 {
 }
 
 @media only screen and (max-width: 320px) {
-  .categories .categories-container .online-learning {
+  .section-holder .online-learning {
     padding-bottom: 110%;
   }
 }
 
-.categories .categories-container .learning-methods {
+.section-holder .learning-methods {
   width: 100%;
   height: 600px;
   background-repeat: no-repeat;
   background-image: url(images/gm-6.png);
   background-size: 50%;
   background-position: left center;
-  margin-top: 30px;
+  margin-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -901,21 +872,21 @@ h2 {
 }
 
 @media only screen and (max-width: 1100px) {
-  .categories .categories-container .learning-methods {
+  .section-holder .learning-methods {
     height: 400px;
     padding-bottom: 0;
   }
 }
 
 @media only screen and (max-width: 900px) {
-  .categories .categories-container .learning-methods {
+  .section-holder .learning-methods {
     height: 300px;
     padding-bottom: 0;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .categories .categories-container .learning-methods {
+  .section-holder .learning-methods {
     height: 0;
     padding-bottom: 100%;
     background-position: bottom;
@@ -925,23 +896,23 @@ h2 {
 }
 
 @media only screen and (max-width: 480px) {
-  .categories .categories-container .learning-methods {
+  .section-holder .learning-methods {
     padding-bottom: 120%;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .categories .categories-container .learning-methods {
+  .section-holder .learning-methods {
     padding-bottom: 135%;
   }
 }
 
-.categories .categories-container .learning-methods .text-container {
+.section-holder .learning-methods .text-container {
   width: 50%;
 }
 
 @media only screen and (max-width: 768px) {
-  .categories .categories-container .learning-methods .text-container {
+  .section-holder .learning-methods .text-container {
     width: 100%;
     top: 0px;
     padding-top: 0;
@@ -951,15 +922,15 @@ h2 {
   }
 }
 
-.categories .categories-container .learning-methods .text-container h2, .categories .categories-container .learning-methods .text-container p {
+.section-holder .learning-methods .text-container h2, .section-holder .learning-methods .text-container p {
   color: #000;
 }
 
-.categories .categories-container .learning-methods .text-container a {
+.section-holder .learning-methods .text-container a {
   background-color: #316b90;
 }
 
-.categories .categories-container .learning-methods .text-container a:hover {
+.section-holder .learning-methods .text-container a:hover {
   background: #295978;
 }
 
@@ -1162,36 +1133,52 @@ footer .bottom-footer-content-2 {
   text-align: center;
 }
 
-.category {
-  margin-top: 44px;
+.categories {
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+@media only screen and (max-width: 766px) {
+  .categories {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+}
+
+.categories .category-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
+  padding: 0 30px;
 }
 
 @media only screen and (max-width: 900px) {
-  .category {
+  .categories .category-container {
     margin: 0;
-    padding: 0 30px 30px 30px;
   }
 }
 
 @media only screen and (max-width: 766px) {
-  .category {
+  .categories .category-container {
     padding-bottom: 20px !important;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
 @media only screen and (max-width: 900px) {
-  .category .category-text-container {
+  .categories .category-container .category-text-container {
     padding-top: 30px;
     padding-bottom: 0;
   }
 }
 
-.category .category-text-container h2 {
+.categories .category-container .category-text-container h2 {
   color: #3596d3;
   font-size: 36px;
   padding-bottom: 20px;
@@ -1200,41 +1187,41 @@ footer .bottom-footer-content-2 {
 }
 
 @media only screen and (max-width: 480px) {
-  .category .category-text-container h2 {
+  .categories .category-container .category-text-container h2 {
     font-size: 26px;
   }
 }
 
-.category .category-text-container p {
+.categories .category-container .category-text-container p {
   padding: 20px 0;
   line-height: 1.5;
 }
 
 @media only screen and (max-width: 480px) {
-  .category .category-text-container p {
+  .categories .category-container .category-text-container p {
     font-size: 15px;
   }
 }
 
-.category .category-text-container .price {
+.categories .category-container .category-text-container .price {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 20px;
   line-height: 1.5;
 }
 
-.category .category-text-container .price span {
+.categories .category-container .category-text-container .price span {
   font-weight: bold;
 }
 
 @media only screen and (max-width: 900px) {
-  .category .picture-container {
+  .categories .category-container .picture-container {
     -ms-grid-row: 1;
         grid-row-start: 1;
     grid-row-end: 2;
   }
 }
 
-.category .picture-container .tutoring, .category .picture-container .learning-help, .category .picture-container .consulting, .category .picture-container .category-learning-methods, .category .picture-container .education {
+.categories .category-container .picture-container .tutoring, .categories .category-container .picture-container .learning-help, .categories .category-container .picture-container .consulting, .categories .category-container .picture-container .category-learning-methods, .categories .category-container .picture-container .education {
   background-color: #7CCCFF;
   height: 0px;
   padding-bottom: 65%;
@@ -1246,25 +1233,25 @@ footer .bottom-footer-content-2 {
 }
 
 @media only screen and (max-width: 900px) {
-  .category .picture-container .tutoring, .category .picture-container .learning-help, .category .picture-container .consulting, .category .picture-container .category-learning-methods, .category .picture-container .education {
+  .categories .category-container .picture-container .tutoring, .categories .category-container .picture-container .learning-help, .categories .category-container .picture-container .consulting, .categories .category-container .picture-container .category-learning-methods, .categories .category-container .picture-container .education {
     margin: 0 -30px 0 -30px;
   }
 }
 
-.category .picture-container .learning-help {
+.categories .category-container .picture-container .learning-help {
   background-image: url(images/pomoc-u-ucenju.svg);
 }
 
-.category .picture-container .consulting {
+.categories .category-container .picture-container .consulting {
   background-image: url(images/savjetovanje-roditelja-big.svg);
 }
 
-.category .picture-container .category-learning-methods {
+.categories .category-container .picture-container .category-learning-methods {
   background-image: url(images/gm-6.png);
   background-size: auto 90%;
 }
 
-.category .picture-container .education {
+.categories .category-container .picture-container .education {
   background-image: url(images/edukacija-za-pomocnike-big.svg);
 }
 
@@ -1315,9 +1302,10 @@ footer .bottom-footer-content-2 {
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   width: 340px;
-  height: 350px;
+  height: auto;
   margin: auto;
-  margin-top: -20px;
+  padding-top: -20px;
+  padding-bottom: 30px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -1325,8 +1313,7 @@ footer .bottom-footer-content-2 {
     -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
             box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 340px;
-    height: 350px;
+    max-width: 385px;
     margin: auto;
     margin-top: -20px;
   }
@@ -1509,7 +1496,7 @@ footer .bottom-footer-content-2 {
   .about-us .anja-images .image.bottom {
     background-size: 80%;
     background-position: center bottom;
-    margin-top: -20px !important;
+    margin-top: -50px !important;
   }
 }
 
