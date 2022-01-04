@@ -407,7 +407,6 @@ header.blue nav .logo .logo-image, header.blue-home nav .logo .logo-image {
   height: 600px;
   background-color: #f7ba09;
   position: relative;
-  padding: 0 !important;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -453,7 +452,7 @@ header.blue nav .logo .logo-image, header.blue-home nav .logo .logo-image {
 }
 
 .content .main-content .main-content-container .main-message {
-  margin-left: 120px;
+  margin-left: 112px;
   position: absolute;
   top: 50%;
   width: 500px;
@@ -1203,13 +1202,13 @@ footer .bottom-footer-content-2 {
   }
 }
 
-.categories .category-container .category-text-container .price {
+.categories .category-container .category-text-container p .price {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 20px;
   line-height: 1.5;
 }
 
-.categories .category-container .category-text-container .price span {
+.categories .category-container .category-text-container p .price span {
   font-weight: bold;
 }
 
@@ -1225,7 +1224,7 @@ footer .bottom-footer-content-2 {
   background-color: #7CCCFF;
   height: 0px;
   padding-bottom: 65%;
-  margin-top: 63px;
+  margin-top: 60px;
   background-image: url(images/instrukcije.svg);
   background-repeat: no-repeat;
   background-size: 100%;
