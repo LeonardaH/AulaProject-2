@@ -526,7 +526,7 @@ h2{
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
-                background-color: #FED964;
+                background-color: #7CCCFF;
                 background-image: url(images/next.png);
                 background-size: 20px;
                 background-repeat: no-repeat;
@@ -535,7 +535,7 @@ h2{
                 bottom: -30px;
                 background-position: center;
                 &:hover{
-                    background-color: #F5AD53;
+                    background-color: #FED964;
                 }
                 @media only screen and (max-width: 480px){
                     font-size: 14px;
