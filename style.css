@@ -592,21 +592,23 @@ h2 {
 }
 
 .section-holder {
-  max-width: 1400px;
+  width: 100%;
   width: 100%;
   overflow: hidden;
   margin: auto;
-  padding: 0 30px;
 }
 
 .section-holder .category-grid {
   width: 100%;
+  max-width: 1400px;
+  margin: auto;
   margin-top: 60px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
+  padding: 0 30px;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -687,8 +689,8 @@ h2 {
 .section-holder .category-grid .category-content .learn-more {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
   background-color: #7CCCFF;
+  border-radius: 50%;
   background-image: url(images/next.png);
   background-size: 20px;
   background-repeat: no-repeat;
@@ -741,11 +743,17 @@ h2 {
 
 @media only screen and (max-width: 768px) {
   .section-holder .online-learning .text-container, .section-holder .learning-methods .text-container {
-    padding: 30px;
+    padding: 30px 30px 30px 50px;
     -webkit-transform: none;
             transform: none;
     top: 0;
     width: 80%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .section-holder .online-learning .text-container, .section-holder .learning-methods .text-container {
+    padding-left: 60px;
   }
 }
 
@@ -801,13 +809,13 @@ h2 {
   padding: 16px 36px;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 480px) {
   .section-holder .online-learning {
     height: 0;
     float: left;
     background-position: bottom right -55px;
     background-size: auto 100%;
-    padding-bottom: 150%;
+    padding-bottom: 130%;
     margin-bottom: 50px;
     margin-top: 50px;
     left: -30px;
@@ -824,10 +832,11 @@ h2 {
 .section-holder .learning-methods {
   width: 100%;
   height: 600px;
+  padding: 0 30px;
   background-repeat: no-repeat;
   background-image: url(images/gm-6.png);
   background-size: 50%;
-  background-position: left center;
+  background-position: left 20px center;
   margin-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -860,7 +869,7 @@ h2 {
 
 @media only screen and (max-width: 480px) {
   .section-holder .learning-methods {
-    padding-bottom: 120%;
+    padding-bottom: 114%;
   }
 }
 
@@ -872,6 +881,7 @@ h2 {
 
 .section-holder .learning-methods .text-container {
   width: 50%;
+  padding-left: 80px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -879,7 +889,6 @@ h2 {
     width: 100%;
     top: 0px;
     padding-top: 0;
-    padding-left: 0;
     -webkit-transform: none;
             transform: none;
   }
